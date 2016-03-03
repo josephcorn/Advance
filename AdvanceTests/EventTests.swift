@@ -1,7 +1,6 @@
 import XCTest
 @testable import Advance
 
-
 class EventTests : XCTestCase {
     func testEvent() {
         let payload = 123
@@ -23,8 +22,11 @@ class EventTests : XCTestCase {
         event.fire(payload)
         XCTAssertFalse(event.closed)
         
-        waitForExpectationsWithTimeout(3.0) { (error) -> Void in
-            guard error == nil else { XCTFail(); return }
+        waitForExpectationsWithTimeout(3.0) { 
+            (error) -> Void in
+                guard error == nil else { 
+                XCTFail(); return
+            }
         }
     }
     
